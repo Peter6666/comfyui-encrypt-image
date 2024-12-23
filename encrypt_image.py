@@ -30,6 +30,7 @@ if PILImage.Image.__name__ != 'EncryptedImage':
         __name__ = "EncryptedImage"
         @staticmethod
         def from_image(image:PILImage.Image):
+            image = image.convert("RGBA")
             image = image.copy()
             img = EncryptedImage()
             img.im = image.im
